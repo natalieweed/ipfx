@@ -146,7 +146,7 @@ def get_nwb_path_from_lims(ephys_roi_result):
 
     if result:
         nwb_path = result["storage_directory"] + result["filename"]
-        return nwb_path
+        return fix_network_path(nwb_path)
     else:
         logging.info("Cannot find NWB file")
         return None
